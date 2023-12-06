@@ -16,7 +16,6 @@ cmake_config_args=(
     -DLIBHIDAPI_LIBRARIES=$PREFIX/lib/libhidapi-libusb$SHLIB_EXT
     -DLIBUSB_INCLUDE_DIR=$PREFIX/include/libusb-1.0
     -DLIBUSB_LIBRARIES=$PREFIX/lib/libusb-1.0$SHLIB_EXT
-    -DQA_PYTHON_EXECUTABLE=$PYTHON
 )
 
 cmake ${CMAKE_ARGS} -G "Ninja" .. "${cmake_config_args[@]}"
@@ -28,6 +27,6 @@ if [[ $target_platform == linux-* ]]; then
     cp ../50-funcube.rules $PREFIX/lib/udev/rules.d/
 fi
 
-if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" != "1" || "${CROSSCOMPILING_EMULATOR}" != "" ]]; then
+if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" != "1" ]]; then
     ctest --build-config Release --output-on-failure --timeout 120 -j${CPU_COUNT}
 fi
