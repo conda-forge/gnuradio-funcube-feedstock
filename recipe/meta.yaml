@@ -10,7 +10,7 @@ source:
   sha256: 0e93f799acdc7dae0627ecb3eaea607565f8a71bfe615b80ef6ca057298593aa
 
 build:
-  number: 1
+  number: 2
   skip: true  # [not linux]
   run_exports:
     - {{ pin_subpackage('gnuradio-funcube', max_pin='x.x') }}
