@@ -16,6 +16,7 @@ cmake_config_args=(
     -DLIBHIDAPI_LIBRARIES=$PREFIX/lib/libhidapi-libusb$SHLIB_EXT
     -DLIBUSB_INCLUDE_DIR=$PREFIX/include/libusb-1.0
     -DLIBUSB_LIBRARIES=$PREFIX/lib/libusb-1.0$SHLIB_EXT
+    -DQA_PYTHON_EXECUTABLE=$PYTHON
 )
 
 cmake ${CMAKE_ARGS} -G "Ninja" .. "${cmake_config_args[@]}"
