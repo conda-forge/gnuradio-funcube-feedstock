@@ -27,6 +27,6 @@ if [[ $target_platform == linux-* ]]; then
     cp ../50-funcube.rules $PREFIX/lib/udev/rules.d/
 fi
 
-if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" != "1" ]]; then
+if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" != "1" ]]; then `#migrator don't modify`
     ctest --build-config Release --output-on-failure --timeout 120 -j${CPU_COUNT}
 fi
