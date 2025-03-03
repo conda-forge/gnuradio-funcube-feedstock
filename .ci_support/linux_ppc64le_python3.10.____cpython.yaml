@@ -23,7 +23,7 @@ fmt:
 gmp:
 - '6'
 gnuradio_core:
-- 3.10.11
+- 3.10.12
 libboost_headers:
 - '1.86'
 numpy:
